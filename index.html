@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>国际资讯</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="images/camera.png" rel="shortcut icon">
+                         <link href="Style/index.css" rel="stylesheet">
+                         
+           <link href="bootstrap-3.3.7-dist/css/bootstrap.css"  rel="stylesheet">
+                	<script src="Script/jquery-3.1.1.min.js"></script>
+         <link href="Style/bootstrap.css" rel="stylesheet"> 
+         <script src="Script/bootstrap.js"></script>
+      
+    </head>
+    <body>
+<!--网页头部-->
+<header>
+    <img src="images/camera.png" alt="logo" id="logo"><h1>国际资讯</h1>
+    <h4>关注国际时事新闻</h4>  
+</header>
+<!--轮播区-->
+<section id="d" class="carousel slide">
+    <!--轮播指针-->
+    <ol class="carousel-indicators">
+        <li class="active" data-target="#d" data-slide-to="0"></li>       
+       <li  data-target="#d" data-slide-to="1"></li>  
+           <li  data-target="#d" data-slide-to="2"></li>  
+    </ol>   
+ <!--轮播图片-->   
+ <section class="carousel-inner">
+     <section class="item active">
+    <h2 class="ins" onclick="startRequest('st'),show()">圣彼得堡发生恐怖袭击</h2>  <section id="op"></section>       <img src="images/st.jpg" alt="st" id="st">        
+     </section>
+     <section class="item">
+    <h2 class="ins"  onclick="startRequest('park'),show()">朴槿惠接受调查</h2>   <section id="op"></section>   <img src="images/park.jpg" alt="park" id="park">          
+     </section>  
+   
+          <section class="item">
+    <h2 class="ins"  onclick="startRequest('saudi'),show()">沙特将军遭“蛋袭”</h2>   <section id="op"></section>     <img src="images/bike.jpg" alt="park" id="park">          
+     </section>    
+ </section>
+ <!--控制左右-->    
+ <a href="#d" class="carousel-control left" data-slide="prev"><</a>
+ <a href="#d" class="carousel-control right" data-slide="next">></a>
+</section>
+ <!--详情--> 
+ <section id="detail">
+     <button id="b1" onclick="fclose()"><i class="glyphicon glyphicon-off"></i></button>
+ <section id="s1"></section>
+  </section>
+        <script>
+            /*隐藏、显示详情*/
+   function fclose(){
+   document.getElementById("detail").style.display='none';
+  
+   }
+      function show(){
+             document.getElementById("detail").style.display='block';
+             
+   }
+   /*图片自动轮播,3秒更换一幅*/
+   $(function(){
+       $("#d").carousel({interval:3000});
+   })
+        </script>
+ <script src="Script/ajax.js"></script>
+    </body>
+</html>
